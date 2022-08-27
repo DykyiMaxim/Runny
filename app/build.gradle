@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 32
@@ -86,8 +87,12 @@ dependencies {
     api 'com.google.dagger:dagger-android-support:2.28.1'
     kapt 'com.google.dagger:dagger-android-processor:2.23.2'
 
+    //Dagger-Hilt
+    implementation "com.google.dagger:hilt-android:2.37"
+    kapt "com.google.dagger:hilt-android-compiler:2.37"
     // Easy Permissions
     implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation"androidx.activity:activity-ktx:1.5.1"
 
     // Timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
