@@ -1,7 +1,8 @@
-package com.WM.runny
+package com.WM.runny.presentation.MainScreen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.WM.runny.R
 import dagger.hilt.android.AndroidEntryPoint
 
 

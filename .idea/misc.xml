@@ -5,7 +5,13 @@
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/drawable/ic_stop_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/fargment_setings.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/fargment_setup.xml" value="0.205859375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/fragment_tracking.xml" value="0.2734375" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/fragmet_run.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/item_run.xml" value="0.6" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/statistic_fragmet.xml" value="0.205859375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Runny/app/src/main/res/layout/statisticfragment.xml" value="0.1" />
       </map>
     </option>
   </component>

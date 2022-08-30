@@ -22,7 +22,7 @@
         android:theme="@style/Theme.Runny"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity" android:launchMode="singleTask"
+            android:name=".presentation.MainScreen.MainActivity" android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
