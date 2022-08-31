@@ -1,4 +1,4 @@
-package com.WM.runny.presentation.StatisticFragment
+package com.WM.runny.presentation.TrackingFragment
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -7,6 +7,6 @@ import com.WM.runny.presentation.MainScreen.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class StatisticsFragment:Fragment(R.layout.statistic_fragmet) {
-    private val viewModel: StatisticViewModel by viewModels()
+class TrackingFragment:Fragment(R.layout.fragment_tracking) {
+    private val viewModel: MainViewModel by viewModels()
 }
