@@ -11,8 +11,9 @@ import com.WM.runny.R
 import com.WM.runny.common.Constans.ACTION_SHOW_TRACKING_FRAGMENT
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
+        Timber.d("NEW INTENT")
         navigateToTrackingFragment(intent)
     }
     private fun  navigateToTrackingFragment(intent:Intent?) {
