@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.WM.runny.R
 import com.WM.runny.common.Constans.REQUEST_CODE_LOCATION_PERMISSION
 import com.WM.runny.common.TrackingUtility
 import com.WM.runny.presentation.MainScreen.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragmet_run.*
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
@@ -20,6 +22,9 @@ class RunFragment:Fragment(R.layout.fragmet_run),EasyPermissions.PermissionCallb
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requestPermissions()
+        fab.setOnClickListener{
+            findNavController().navigate(R.id.action_runFragment_to_trackingFragment)
+        }
     }
 
     private fun requestPermissions() {

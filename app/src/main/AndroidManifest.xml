@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Runny"
+        android:theme="@style/Theme.MaterialComponents"
         tools:targetApi="31">
         <activity
             android:name=".presentation.MainScreen.MainActivity" android:launchMode="singleTask"
@@ -40,8 +40,9 @@
             android:value="@integer/google_play_services_version"/>
 
         <meta-data
-            android:name="com.google.geo.API_KEY"
+            android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key"/>
+
 
     </application>
 
