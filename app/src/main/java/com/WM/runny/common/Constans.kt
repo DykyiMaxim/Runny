@@ -12,6 +12,8 @@ object Constans {
     const val LOCATION_UPDATE_MILLS = 50000L
     const val FASTEST_LOCATION_INTERVAL = 20000L
     const val TIMER_UPDATE_INTERVAL = 50L
+    const val CANCEL_TRACKING_DIALOG_TAG = "CANCEL_TRACKING_DIALOG_TAG"
+
 
     const val POLYLINE_COLOR = Color.RED
     const val POLYLINE_WIDTH = 8f
