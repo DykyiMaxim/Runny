@@ -63,7 +63,7 @@ class TrackingFragment:Fragment(R.layout.fragment_tracking) {
 
         TrackingService.timeRunInMiles.observe(viewLifecycleOwner, Observer {
             currentTimeMillis = it
-            val formattedTime = TrackingUtility.getFormatedStopWatch(currentTimeMillis,true)
+            val formattedTime = TrackingUtility.getFormattedStopWatchTime(currentTimeMillis,true)
             tvTimer.text = formattedTime
         })
     }

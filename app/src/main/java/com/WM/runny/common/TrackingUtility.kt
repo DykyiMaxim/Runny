@@ -23,27 +23,25 @@ object TrackingUtility {
             )
         }
 
-fun getFormatedStopWatch(ms:Long,includeMillis:Boolean = false):String{
-    var millisecends = ms
-    val hours = TimeUnit.MILLISECONDS.toHours(millisecends)
-    millisecends -= TimeUnit.HOURS.toMillis(hours)
+    fun getFormattedStopWatchTime(ms: Long, includeMillis: Boolean = false): String {
+        var milliseconds = ms
+        val hours = TimeUnit.MILLISECONDS.toHours(milliseconds)
+        milliseconds -= TimeUnit.HOURS.toMillis(hours)
+        val minutes = TimeUnit.MILLISECONDS.toMinutes(milliseconds)
+        milliseconds -= TimeUnit.MINUTES.toMillis(minutes)
+        val seconds = TimeUnit.MILLISECONDS.toSeconds(milliseconds)
 
-    val minutes = TimeUnit.MILLISECONDS.toMillis(millisecends)
-    millisecends-= TimeUnit.MINUTES.toMillis(minutes)
+        if (!includeMillis) {
+            return "${if (hours < 10) "0" else ""}$hours:" +
+                    "${if (minutes < 10) "0" else ""}$minutes:" +
+                    "${if (seconds < 10) "0" else ""}$seconds"
+        }
+        milliseconds -= TimeUnit.SECONDS.toMillis(seconds)
+        milliseconds /= 10
 
-    val seconds = TimeUnit.MILLISECONDS.toSeconds(millisecends)
-    if(!includeMillis){
-        return "${if(hours<10) "0" else{""}}$hours:"+
-                "${if(minutes<10) "0" else {""}}$minutes:"+
-                "${if(seconds<10) "0" else{""}}$seconds:"
+        return "${if (hours < 10) "0" else ""}$hours:" +
+                "${if (minutes < 10) "0" else ""}$minutes:" +
+                "${if (seconds < 10) "0" else ""}$seconds:" +
+                "${if (milliseconds < 10) "0" else ""}$milliseconds"
     }
-    millisecends - TimeUnit.SECONDS.toMillis(seconds)
-    millisecends /=10
-    return "${if(hours<10) "0" else{""}}$hours:"+
-            "${if(minutes<10) "0" else {""}}$minutes:"+
-            "${if(seconds<10) "0" else{""}}$seconds:"+
-            "${if (millisecends<10) "0" else{""}}$millisecends"
-
-}
-
 }
