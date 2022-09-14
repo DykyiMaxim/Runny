@@ -19,6 +19,7 @@ import com.WM.runny.common.Constans.POLYLINE_WIDTH
 import com.WM.runny.common.TrackingUtility
 import com.WM.runny.data.TrackingService.Polyline
 import com.WM.runny.data.TrackingService.TrackingService
+import com.WM.runny.domain.run.Run
 import com.WM.runny.presentation.MainScreen.MainViewModel
 import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -26,16 +27,19 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.android.synthetic.main.fragment_tracking.*
 import timber.log.Timber
+import kotlin.math.*
 
 @AndroidEntryPoint
 class TrackingFragment:Fragment(R.layout.fragment_tracking) {
     private val viewModel: MainViewModel by viewModels()
 
     private var isTracking = false
+    private var weight = 80f
 
     private var pathPoints = mutableListOf<Polyline>()
 
@@ -190,6 +194,10 @@ class TrackingFragment:Fragment(R.layout.fragment_tracking) {
         }
         map?.moveCamera(
             CameraUpdateFactory.newLatLngBounds(
+                bounds.build(),
+                mapView.height,
+                mapView.width,
+                (mapView.height*0.05f).toInt()
 
             )
         )
@@ -202,19 +210,18 @@ class TrackingFragment:Fragment(R.layout.fragment_tracking) {
             for (polyline in pathPoints) {
                 distanceInMeters += TrackingUtility.calculatePolylineLength(polyline).toInt()
             }
-            val avgSpeed =
-                round((distanceInMeters / 1000f) / (curTimeInMillis / 1000f / 60 / 60) * 10) / 10f
+            val avgSpeed = round((distanceInMeters / 1000f) / (currentTimeMillis / 1000f / 60 / 60) * 10) / 10f
             val dateTimestamp = java.util.Calendar.getInstance().timeInMillis
             val caloriesBurned = ((distanceInMeters / 1000f) * weight).toInt()
             val run = Run(
                 bitmap,
                 dateTimestamp,
-                avgSpeedInKMH = avgSpeed,
+                 avgSpeed,
                 distanceInMeters,
-                curTimeInMillis,
+                currentTimeMillis,
                 caloriesBurned
             )
-            viewModel.insertRun(run)
+            viewModel.InsertRun(run)
             Snackbar.make(
                 requireActivity().findViewById(R.id.rootView),
                 "Run saved successfully",
