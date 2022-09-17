@@ -32,6 +32,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.android.synthetic.main.fragment_tracking.*
 import timber.log.Timber
+import javax.inject.Inject
 import kotlin.math.*
 
 @AndroidEntryPoint
@@ -39,7 +40,8 @@ class TrackingFragment:Fragment(R.layout.fragment_tracking) {
     private val viewModel: MainViewModel by viewModels()
 
     private var isTracking = false
-    private var weight = 80f
+    @set:Inject
+    var weight = 80f
 
     private var pathPoints = mutableListOf<Polyline>()
 
