@@ -1,11 +1,15 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
         <!-- Original AppCompat attributes. -->
         <item name="colorPrimary">@color/md_blue_900</item>
+        <item name="colorControlNormal">@color/md_blue_900</item>
         <item name="colorSecondary">@color/md_blue_500</item>
         <item name="android:colorBackground">@color/md_blue_700</item>
         <item name="colorError">@color/errorColor</item>
+
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
 
         <!-- New MaterialComponents attributes. -->
         <item name="colorPrimaryVariant">@android:color/white</item>
@@ -41,6 +45,10 @@
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
     </style>
 
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#bc5345</item>
+    </style>
+
 
     <style name="TextViewStyle" parent="Widget.MaterialComponents.TextView">
         <item name="android:textColor">@android:color/white</item>
@@ -58,9 +66,9 @@
     </style>
 
     <style name="FormButton">
-        <item name="colorOnPrimary">@android:color/holo_red_light</item>
-        <item name="colorPrimary">@android:color/holo_orange_dark</item>
-        <item name="colorOnSurface">@android:color/holo_orange_light</item>
+        <item name="colorOnPrimary">@color/md_blue_50</item>
+        <item name="colorPrimary">@color/md_blue_400</item>
+        <item name="colorOnSurface">@color/md_blue_400</item>
     </style>
 
 </resources>

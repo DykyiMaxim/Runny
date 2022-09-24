@@ -1,10 +1,12 @@
 package com.WM.runny.presentation.MainScreen
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.WM.runny.R
