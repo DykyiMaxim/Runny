@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Runny</string>
+    <string name="deleteRunItemToolBar">Delete</string>
+    <string name="selectall_deleteItem_TollBar">SelectAll</string>
     <string-array name="filter_options">
         <item>Date</item>
         <item>Running Time</item>
